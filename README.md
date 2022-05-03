@@ -20,3 +20,21 @@ The input to this program is a Grammar.
 The output of this program will be an equivalent grammar without any left recursion, or an error in the event the input is
 messed up, or describes an invalid grammar (e.g, a grammar with no terminals).
 
+### Example
+
+Input:
+```
+S -> a A | S c
+A -> A B b | A d | empty
+B -> A d | S c
+```
+
+Output:
+```
+S -> a A S'
+S' -> c S' | empty
+A -> A'
+A' -> B b A' | d A' | empty
+B -> d A' d B' | d B' | a A S' c B'
+B' -> b A' d B' | empty
+```
