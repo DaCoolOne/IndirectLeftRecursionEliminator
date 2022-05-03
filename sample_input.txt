@@ -1,0 +1,3 @@
+S -> a A | S c
+A -> A B b | A d | empty
+B -> A d | S c

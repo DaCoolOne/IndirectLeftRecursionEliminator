@@ -1,0 +1,6 @@
+S -> a A S'
+S' -> c S' | empty
+A -> A'
+A' -> B b A' | d A' | empty
+B -> d A' d B' | d B' | a A S' c B'
+B' -> b A' d B' | empty
